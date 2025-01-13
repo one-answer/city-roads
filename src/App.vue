@@ -20,7 +20,7 @@
 
         <h3>Export</h3>
         <div class='row'>
-          <a href='#' @click.prevent='zazzleMugPrint()' class='col'>Onto a mug</a> 
+          <a href='#' @click.prevent='zazzleMugPrint()' class='col'>Onto a mug</a>
           <span class='col c-2'>
             Print what you see onto a mug. <br/>Get a unique gift of your favorite city.
           </span>
@@ -36,36 +36,36 @@
             </div>
         </div>
         <div class='row'>
-          <a href='#'  @click.prevent='toPNGFile' class='col'>As an image (.png)</a> 
+          <a href='#'  @click.prevent='toPNGFile' class='col'>As an image (.png)</a>
           <span class='col c-2'>
             Save the current screen as a raster image.
           </span>
         </div>
-        
+
         <div class='row'>
-          <a href='#'  @click.prevent='toSVGFile' class='col'>As a vector (.svg)</a> 
+          <a href='#'  @click.prevent='toSVGFile' class='col'>As a vector (.svg)</a>
           <span class='col c-2'>
             Save the current screen as a vector image.
           </span>
         </div>
         <div v-if='false' class='row'>
-          <a href='#' @click.prevent='toProtobuf' class='col'>To a .PBF file</a> 
+          <a href='#' @click.prevent='toProtobuf' class='col'>To a .PBF file</a>
           <span class='col c-2'>
             Save the current data as a protobuf message. For developer use only.
           </span>
         </div>
 
-        <h3>About</h3>
+<!--        <h3>About</h3>
         <div>
           <p>This website was created by <a href='https://twitter.com/anvaka' target='_blank'>@anvaka</a>.
           It downloads roads from OpenStreetMap and renders them with WebGL.
           </p>
           <p>
-           You can find the entire <a href='https://github.com/anvaka/city-roads'>source code here</a>. 
-           If you love this website you can also <a href='https://www.paypal.com/paypalme2/anvakos/3'>buy me a coffee</a> or 
+           You can find the entire <a href='https://github.com/anvaka/city-roads'>source code here</a>.
+           If you love this website you can also <a href='https://www.paypal.com/paypalme2/anvakos/3'>buy me a coffee</a> or
            <a href='https://www.patreon.com/anvaka'>support me on Patreon</a>, but you don't have to.
           </p>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>
@@ -199,7 +199,7 @@ export default {
       scene.saveToPNG(this.name)
     },
 
-    toSVGFile(e) { 
+    toSVGFile(e) {
       scene.saveToSVG(this.name)
     },
 
