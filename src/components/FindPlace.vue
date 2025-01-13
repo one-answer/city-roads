@@ -5,7 +5,7 @@
     <p class='description'>让城市的每一条道路呈现在你的面前</p>
   </div>
   <form v-on:submit.prevent="onSubmit" class='search-box'>
-      <input class='query-input' v-model='enteredInput' type='text' placeholder='Enter a city name to start' ref='input'>
+      <input class='query-input' v-model='enteredInput' type='text' placeholder='请输入城市名称' ref='input'>
       <a type='submit' class='search-submit' href='#' @click.prevent='onSubmit' v-if='enteredInput && !hideInput'>{{mainActionText}}</a>
   </form>
   <div v-if='showWarning' class='prompt message note shadow'>
@@ -14,8 +14,8 @@
   <div class='results' v-if='!loading'>
     <div v-if='suggestionsLoaded && suggestions.length' class='suggestions shadow'>
       <div class='prompt message'>
-        <div>Select boundaries below to download all roads within</div>
-        <div class='note'>large cities may require 200MB+ of data transfer and a powerful device</div>
+        <div>选择城市以下载其中的所有道路</div>
+        <div class='note'>大城市可能需要200 MB以上的数据传输</div>
       </div>
       <ul>
         <li v-for='(suggestion, index) in suggestions' :key="index">
@@ -71,7 +71,7 @@ import LoadOptions from '../lib/LoadOptions.js';
 import Pbf from 'pbf';
 import {place} from '../proto/place.js';
 
-const FIND_TEXT = 'Find City Bounds';
+const FIND_TEXT = '搜索';
 
 export default {
   name: 'FindPlace',
