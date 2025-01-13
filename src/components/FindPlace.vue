@@ -1,8 +1,8 @@
 <template>
 <div class='find-place' :class='{centered: boxInTheMiddle }'>
   <div v-if='boxInTheMiddle'>
-    <h3 class='site-header'>city roads</h3>
-    <p class='description'>This website renders every single road within a city</p>
+    <h3 class='site-header'>城市线</h3>
+    <p class='description'>让城市的每一条道路呈现在你的面前</p>
   </div>
   <form v-on:submit.prevent="onSubmit" class='search-box'>
       <input class='query-input' v-model='enteredInput' type='text' placeholder='Enter a city name to start' ref='input'>
@@ -93,7 +93,7 @@ export default {
       hideInput: false,
       noRoads: false,
       clicked: false,
-      showWarning: hasValidArea, 
+      showWarning: hasValidArea,
       mainActionText: hasValidArea ? 'Download Area' : FIND_TEXT,
       suggestions: []
     }
@@ -147,7 +147,7 @@ export default {
             }, 50)
           } else {
               this.suggestionsLoaded = true;
-              this.suggestions = suggestions; 
+              this.suggestions = suggestions;
           }
         });
     },
@@ -229,8 +229,8 @@ export default {
 
     useOSM(suggestion) {
       this.loading = 'Connecting to OpenStreetMap...'
-      
-      // it may take a while to load data. 
+
+      // it may take a while to load data.
       this.restartLoadingMonitor();
       Query.runFromOptions(new LoadOptions({
         wayFilter: Query.Road,
