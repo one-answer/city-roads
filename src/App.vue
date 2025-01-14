@@ -3,8 +3,8 @@
   <div id="app">
     <div v-if='placeFound'>
       <div class='controls'>
-        <a href="#" class='print-button' @click.prevent='toggleSettings'>Customize...</a>
-        <a href="#" class='try-another' @click.prevent='startOver'>Try another city</a>
+        <a href="#" class='print-button' @click.prevent='toggleSettings'>自定义</a>
+        <a href="#" class='try-another' @click.prevent='startOver'>换个城市</a>
       </div>
       <div v-if='showSettings' class='print-window'>
         <h3>Display</h3>
