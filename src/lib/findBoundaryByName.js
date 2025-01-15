@@ -7,7 +7,7 @@ export default function findBoundaryByName(inputName) {
   if (results) return Promise.resolve(results);
 
   let name = encodeURIComponent(inputName);
-  return request(`https://nominatim.openstreetmap.org/search?format=json&q=${name}`, {responseType: 'json'})
+  return request(`https://kaiwu.xxlb.org/road/search?q=${name}`, {responseType: 'json'})
       .then(extractBoundaries)
       .then(x => {
         cachedResults.set(inputName, x);
@@ -19,8 +19,8 @@ function extractBoundaries(x) {
   let areas = x.map(row => {
       let areaId, bbox;
       if (row.osm_type === 'relation') {
-        // By convention the area id can be calculated from an existing 
-        // OSM way by adding 2400000000 to its OSM id, or in case of a 
+        // By convention the area id can be calculated from an existing
+        // OSM way by adding 2400000000 to its OSM id, or in case of a
         // relation by adding 3600000000 respectively. So we are adding this
         // https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#By_area_.28area.29
         // Note: we may want to do another case for osm_type = 'way'. Need to check
